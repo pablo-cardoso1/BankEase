@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BankEase - Sua Conta Bancária Online</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1>BankEase</h1>
+        </div>
+        <!-- Navegação pode ser adicionada aqui se necessário -->
+    </header>
+
+    <section class="hero">
+        <h2>Bem-vindo ao BankEase</h2>
+        <p>Acesse sua conta bancária de forma rápida e segura.</p>
+        <!-- Links atualizados para apontar para as seções de formulário -->
+        <a href="#cadastro" class="btn">Cadastre-se</a>
+        <a href="#login" class="btn">Login</a>
+    </section>
+
+    <section id="funcionalidades">
+        <h2>Funcionalidades</h2>
+        <div class="cards">
+            <div class="card">
+                <span class="material-icons">account_circle</span>
+                <h3>Cadastro de Conta</h3>
+                <p>Crie sua conta de maneira simples e segura.</p>
+            </div>
+            <div class="card">
+                <span class="material-icons">lock</span>
+                <h3>Login Seguro</h3>
+                <p>Acesse sua conta com proteção máxima.</p>
+            </div>
+            <div class="card">
+                <span class="material-icons">account_balance_wallet</span>
+                <h3>Consultas e Extratos</h3>
+                <p>Consulte saldo e histórico de transações.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Cadastro Adicionada -->
+    <section id="cadastro">
+        <h2>Crie sua Conta</h2>
+        <form id="cadastro-form">
+            <div class="input-container">
+                <span class="material-icons">badge</span>
+                <input type="text" id="cpf" placeholder="CPF (somente números)" required pattern="\d{11}" title="Digite um CPF válido com 11 dígitos">
+            </div>
+            <div class="input-container">
+                <span class="material-icons">password</span>
+                <input type="password" id="senha" placeholder="Senha" required minlength="4">
+            </div>
+            <button type="submit" class="btn-submit">Cadastrar</button>
+        </form>
+    </section>
+
+    <!-- Seção de Login Adicionada -->
+    <section id="login">
+        <h2>Acesse sua Conta</h2>
+        <form id="login-form">
+            <div class="input-container">
+                <span class="material-icons">badge</span>
+                <input type="text" id="login-cpf" placeholder="CPF (somente números)" required pattern="\d{11}" title="Digite um CPF válido com 11 dígitos">
+            </div>
+            <div class="input-container">
+                <span class="material-icons">password</span>
+                <input type="password" id="login-senha" placeholder="Senha" required>
+            </div>
+            <button type="submit" class="btn-submit">Entrar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 BankEase. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="landing.js"></script>
+</body>
+
+</html>

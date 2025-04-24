@@ -1,0 +1,307 @@
+/* Reset de estilos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* Adiciona rolagem suave para os links internos */
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f8f9fa; /* Fundo ligeiramente diferente para mais contraste */
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px 40px; /* Aumenta padding lateral */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra sutil */
+}
+
+header .logo h1 {
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+
+/* Estilos de Navegação (se adicionar no futuro) */
+/*
+nav ul {
+  list-style: none;
+  display: flex;
+}
+nav ul li {
+  margin: 0 20px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+nav ul li a:hover {
+  color: #f1f1f1;
+}
+*/
+
+.hero {
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  padding: 100px 20px; /* Mais padding vertical */
+  border-bottom: 3px solid #388E3C;
+}
+
+.hero h2 {
+  font-size: 2.8rem; /* Maior */
+  font-weight: 700;
+  margin-bottom: 15px; /* Espaçamento */
+}
+
+.hero p {
+  font-size: 1.2rem; /* Maior */
+  margin-bottom: 40px; /* Mais espaço antes dos botões */
+  max-width: 600px; /* Limita largura para melhor leitura */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero .btn {
+  background-color: #ffffff;
+  color: #4CAF50;
+  padding: 15px 40px;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 25px;
+  margin: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease; /* Adiciona transição de transform */
+  display: inline-block; /* Garante que margin funcione corretamente */
+}
+
+.hero .btn:hover {
+  background-color: #388E3C;
+  color: white;
+  transform: translateY(-3px); /* Efeito sutil ao passar o mouse */
+}
+
+/* Estilos gerais para seções */
+section {
+  padding: 60px 20px; /* Padding vertical padrão */
+  text-align: center;
+}
+
+section h2 {
+  font-size: 2.2rem; /* Tamanho padrão para títulos de seção */
+  margin-bottom: 50px; /* Espaçamento padrão abaixo do título */
+  color: #333;
+}
+
+#funcionalidades {
+  background-color: #ffffff; /* Fundo branco para destacar os cards */
+}
+
+.cards {
+  display: flex;
+  justify-content: center; /* Centraliza os cards se houver espaço */
+  flex-wrap: wrap; /* Permite que os cards quebrem linha */
+  gap: 30px; /* Espaçamento entre os cards */
+  max-width: 1200px; /* Limita a largura máxima do container dos cards */
+  margin: 0 auto; /* Centraliza o container */
+}
+
+.card {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  width: 300px; /* Largura fixa para melhor controle */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08); /* Sombra mais suave */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #eee; /* Borda sutil */
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12); /* Sombra mais pronunciada no hover */
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin: 15px 0;
+  color: #333;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5; /* Melhora legibilidade */
+}
+
+.card .material-icons {
+  font-size: 50px;
+  margin-bottom: 15px;
+  color: #4CAF50;
+}
+
+/* Estilos para as seções de formulário */
+#cadastro, #login {
+  background-color: #f8f9fa; /* Mantém o fundo padrão do body */
+}
+
+section form {
+  width: 100%;
+  max-width: 450px; /* Um pouco maior */
+  margin: 40px auto;
+  background-color: #ffffff;
+  padding: 40px; /* Mais padding interno */
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  text-align: left; /* Alinha conteúdo do form à esquerda */
+}
+
+section form h2 { /* Estilo para o H2 dentro da seção, mas fora do form */
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+section form .input-container {
+  position: relative;
+  margin-bottom: 25px; /* Mais espaço entre inputs */
+}
+
+section form .input-container input {
+  width: 100%;
+  padding: 15px;
+  padding-left: 50px; /* Mais espaço para o ícone */
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+section form .input-container input:focus {
+  outline: none;
+  border-color: #4CAF50; /* Destaca borda no foco */
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2); /* Adiciona um brilho sutil */
+}
+
+section form .input-container span.material-icons { /* Seleciona especificamente o span com a classe */
+  position: absolute;
+  top: 50%;
+  left: 18px; /* Ajusta posição do ícone */
+  transform: translateY(-50%);
+  color: #4CAF50;
+  font-size: 1.4rem; /* Tamanho do ícone */
+}
+
+section form .btn-submit {
+  width: 100%;
+  padding: 15px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600; /* Mais destaque */
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px; /* Espaço acima do botão */
+}
+
+section form .btn-submit:hover {
+  background-color: #388E3C;
+  transform: translateY(-2px); /* Efeito sutil no hover */
+}
+
+footer {
+  text-align: center;
+  padding: 30px 20px; /* Mais padding */
+  background-color: #333;
+  color: #aaa; /* Cor mais suave */
+  font-size: 0.9rem; /* Menor */
+  margin-top: 60px; /* Espaço antes do rodapé */
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+  header {
+      padding: 15px 20px;
+      flex-direction: column; /* Empilha logo e nav (se existir) */
+      text-align: center;
+  }
+
+  header .logo h1 {
+      margin-bottom: 10px; /* Espaço se empilhado */
+  }
+
+  .hero {
+      padding: 80px 20px;
+  }
+
+  .hero h2 {
+      font-size: 2.2rem;
+  }
+
+  .hero p {
+      font-size: 1.1rem;
+  }
+
+  .cards {
+      flex-direction: column; /* Empilha os cards */
+      align-items: center; /* Centraliza os cards empilhados */
+      gap: 25px;
+  }
+
+  .card {
+      width: 90%; /* Ocupa quase toda a largura */
+      max-width: 350px; /* Limita largura máxima */
+  }
+
+  section {
+      padding: 40px 15px;
+  }
+
+  section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+  }
+
+  section form {
+      padding: 30px;
+      max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h2 {
+      font-size: 1.8rem;
+  }
+  .hero p {
+      font-size: 1rem;
+  }
+  .hero .btn {
+      padding: 12px 30px;
+      font-size: 0.9rem;
+  }
+  section form .input-container input {
+      padding-left: 45px;
+      font-size: 0.9rem;
+  }
+  section form .input-container span.material-icons {
+      left: 15px;
+      font-size: 1.2rem;
+  }
+  section form .btn-submit {
+      padding: 12px;
+      font-size: 1rem;
+  }
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BankEase - Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+
+<body>
+  <header>
+    <h1>BankEase</h1>
+    <button id="logout-btn">Sair</button>
+  </header>
+
+  <main>
+    <section class="saldo-box">
+      <h2>Olá, <span id="user-cpf"></span></h2>
+      <p>Saldo disponível:</p>
+      <h3 id="saldo">R$ 0,00</h3>
+    </section>
+
+    <!-- Seção de Transferência -->
+    <section id="transferencia" class="dashboard-section">
+      <h2>Realizar Transferência</h2>
+      <form id="transfer-form">
+        <div class="input-group">
+          <label for="dest-cpf">CPF Destinatário:</label>
+          <input type="text" id="dest-cpf" required pattern="\d{11}" title="Digite um CPF válido com 11 dígitos">
+        </div>
+        <div class="input-group">
+          <label for="transfer-amount">Valor (R$):</label>
+          <input type="number" id="transfer-amount" required min="0.01" step="0.01">
+        </div>
+        <button type="submit" class="btn-action">Transferir</button>
+        <p id="transfer-feedback" class="feedback-message"></p> <!-- Para mensagens de sucesso/erro -->
+      </form>
+    </section>
+
+    <!-- Seção de Extrato -->
+    <section id="extrato" class="dashboard-section">
+      <h2>Extrato</h2>
+      <ul id="lista-extrato">
+        <!-- As transações serão inseridas aqui pelo JavaScript -->
+        <li>Nenhuma transação encontrada.</li>
+      </ul>
+    </section>
+
+        <!-- Seção de Depósito -->
+        <section id="deposito" class="dashboard-section">
+          <h2>Realizar Depósito</h2>
+          <form id="deposit-form">
+            <div class="input-group">
+              <label for="deposit-amount">Valor do Depósito (R$):</label>
+              <input type="number" id="deposit-amount" required min="0.01" step="0.01">
+            </div>
+            <button type="submit" class="btn-action">Depositar</button>
+            <p id="deposit-feedback" class="feedback-message"></p> <!-- Para mensagens de sucesso/erro -->
+          </form>
+        </section>
+    
+
+  </main>
+
+  <script src="dashboard.js"></script>
+</body>
+
+</html>

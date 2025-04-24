@@ -1,0 +1,179 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f4f8;
+  }
+  
+  header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #logout-btn {
+    background-color: #fff;
+    color: #4CAF50;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #logout-btn:hover {
+    background-color: #e8f5e9;
+  }
+  
+  main {
+    padding: 40px 20px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .saldo-box {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  .saldo-box h3 {
+    font-size: 2rem;
+    color: #388E3C;
+  }
+  
+  .transacoes {
+    margin-top: 40px;
+    text-align: center;
+    color: #777;
+  }
+
+  /* Estilos para as novas seções do Dashboard */
+.dashboard-section {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  margin-top: 30px; /* Espaçamento entre as seções */
+}
+
+.dashboard-section h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+/* Estilos para formulários dentro das seções do dashboard */
+.dashboard-section form .input-group { /* <-- Mais genérico */
+  margin-bottom: 20px;
+}
+
+.dashboard-section form label { /* <-- Mais genérico */
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+}
+
+.dashboard-section form input[type="text"], /* <-- Mais genérico */
+.dashboard-section form input[type="number"] { /* <-- Mais genérico */
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+.dashboard-section form input:focus { /* <-- Mais genérico */
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+
+.btn-action {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  display: block; /* Faz o botão ocupar a largura */
+  width: 100%; /* Ocupa toda a largura do container */
+  margin-top: 10px; /* Espaço acima do botão */
+  font-size: 1rem;
+}
+
+.btn-action:hover {
+  background-color: #388E3C;
+  transform: translateY(-2px);
+}
+
+.feedback-message {
+  margin-top: 15px;
+  text-align: center;
+  font-weight: bold;
+  min-height: 1.2em; /* Evita que o layout "pule" quando a mensagem aparece */
+}
+
+/* Estilos para a lista de extrato */
+#lista-extrato {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#lista-extrato li {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+#lista-extrato li:last-child {
+  border-bottom: none; /* Remove a borda do último item */
+}
+
+#lista-extrato li:first-child:not(:only-child) { /* Estilo para o primeiro item se houver mais de um */
+   border-top-left-radius: 5px;
+   border-top-right-radius: 5px;
+}
+#lista-extrato li:last-child:not(:only-child) { /* Estilo para o último item se houver mais de um */
+   border-bottom-left-radius: 5px;
+   border-bottom-right-radius: 5px;
+}
+
+#lista-extrato li.transacao-enviada .valor {
+  color: #D32F2F; /* Vermelho para saídas */
+  font-weight: bold;
+}
+
+#lista-extrato li.transacao-recebida .valor {
+  color: #388E3C; /* Verde para entradas */
+  font-weight: bold;
+}
+
+#lista-extrato li .descricao {
+  flex-grow: 1;
+  margin-right: 15px;
+}
+#lista-extrato li .data {
+    font-size: 0.8em;
+    color: #888;
+    margin-left: 10px;
+    white-space: nowrap; /* Evita quebra de linha na data */
+}
+
+  
