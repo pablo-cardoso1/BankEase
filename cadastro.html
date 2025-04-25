@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+<!-- Seção de Cadastro Adicionada -->
+<section id="cadastro">
+    <h2>Crie sua Conta</h2>
+    <form id="cadastro-form">
+        <div class="input-container">
+            <span class="material-icons">badge</span>
+            <input type="text" id="cpf" placeholder="CPF (somente números)" required pattern="\d{11}" title="Digite um CPF válido com 11 dígitos">
+        </div>
+        <div class="input-container">
+            <span class="material-icons">password</span>
+            <input type="password" id="senha" placeholder="Senha" required minlength="4">
+        </div>
+        <button type="submit" class="btn-submit">Cadastrar</button>
+    </form>
+</section>
+<script src="cadastro.js"></script>
+</body>
+</html>

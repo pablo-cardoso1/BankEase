@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!cpfLogado) {
     alert("Você precisa estar logado.");
-    window.location.href = "landing.html";
+    window.location.href = "index.html";
     return;
   }
 
@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- Event Listeners ---
   logoutBtn.addEventListener("click", () => {
     localStorage.removeItem("usuarioLogado");
-    window.location.href = "landing.html";
+    window.location.href = "index.html";
   });
 
   transferForm.addEventListener("submit", (e) => {

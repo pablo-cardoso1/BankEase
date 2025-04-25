@@ -32,20 +32,8 @@ body {
     padding: 40px 20px;
     max-width: 600px;
     margin: 0 auto;
-  }
+  }  
   
-  .saldo-box {
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-    text-align: center;
-  }
-  
-  .saldo-box h3 {
-    font-size: 2rem;
-    color: #388E3C;
-  }
   
   .transacoes {
     margin-top: 40px;
@@ -66,6 +54,22 @@ body {
   text-align: center;
   margin-bottom: 25px;
   color: #333;
+}
+
+.dashboard-section h3 {
+  font-size: 25px;
+  margin-top: 15px;
+  color: #333;
+  font-weight: bold; 
+  text-align: center;
+
+
+}
+
+.dashboard-section p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.5;
 }
 
 /* Estilos para formulários dentro das seções do dashboard */
