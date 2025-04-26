@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "RjiQ3HExAcUn37Gv/TQdYjf9VIW2X+RQRxdvHpKaSv4=",
+  "Source": "BankEase.Api",
+  "BasePath": "_content/BankEase.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
