@@ -3,6 +3,11 @@ using BankEase.Api.Services;
 using BankEase.Api.Dtos;
 using Microsoft.AspNetCore.Mvc;
 using BCrypt.Net;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 
 namespace BankEase.Api.Controllers
 {
@@ -11,10 +16,12 @@ namespace BankEase.Api.Controllers
     public class UsuarioController : ControllerBase
     {
         private readonly UsuarioService _usuarioService;
+        private readonly IConfiguration _configuration;
 
-        public UsuarioController(UsuarioService usuarioService)
+        public UsuarioController(UsuarioService usuarioService, IConfiguration configuration)
         {
             _usuarioService = usuarioService;
+            _configuration = configuration;
         }
 
         // POST: api/usuario/cadastro
@@ -39,7 +46,28 @@ namespace BankEase.Api.Controllers
             if (usuario == null || !BCrypt.Net.BCrypt.Verify(dto.Senha, usuario.SenhaHash))
                 return Unauthorized("CPF ou senha inválidos");
 
-            return Ok(new { usuario.Id, usuario.Nome, usuario.Email, usuario.Cpf });
+            // Gera o token JWT
+            var jwtSettings = _configuration.GetSection("Jwt");
+            var key = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtSettings["Key"]));
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+            var claims = new[]
+            {
+                new Claim(JwtRegisteredClaimNames.Sub, usuario.Cpf),
+                new Claim(JwtRegisteredClaimNames.UniqueName, usuario.Nome),
+                new Claim(JwtRegisteredClaimNames.Email, usuario.Email),
+                new Claim("id", usuario.Id.ToString())
+            };
+            var expires = DateTime.UtcNow.AddMinutes(int.Parse(jwtSettings["ExpireMinutes"]));
+            var token = new JwtSecurityToken(
+                issuer: jwtSettings["Issuer"],
+                audience: jwtSettings["Audience"],
+                claims: claims,
+                expires: expires,
+                signingCredentials: creds
+            );
+            var tokenString = new JwtSecurityTokenHandler().WriteToken(token);
+
+            return Ok(new { token = tokenString, usuario = new { usuario.Id, usuario.Nome, usuario.Email, usuario.Cpf } });
         }
 
         // GET: api/usuario/{cpf}

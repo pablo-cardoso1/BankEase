@@ -1,11 +1,13 @@
 using BankEase.Api.Dtos;
 using BankEase.Api.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BankEase.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class ContaController : ControllerBase
     {
         private readonly ContaService _contaService;

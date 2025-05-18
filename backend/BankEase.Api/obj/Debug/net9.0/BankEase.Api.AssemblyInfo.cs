@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BankEase.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+04419f1717f18378ff2e39c3a2edfa1391bb6b0d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b6af9cc46685f2dc9c17d811215a46484b12e5eb")]
 [assembly: System.Reflection.AssemblyProductAttribute("BankEase.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BankEase.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

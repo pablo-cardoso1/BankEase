@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const cpfLogado = localStorage.getItem("usuarioLogado");
-  if (!cpfLogado) {
+  const jwtToken = localStorage.getItem("jwtToken");
+  if (!cpfLogado || !jwtToken) {
     alert("Você precisa estar logado.");
     window.location.href = "index.html";
     return;
@@ -20,6 +21,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const depositFeedbackElement = document.getElementById("deposit-feedback");
 
   const API_BASE = "http://localhost:5119/api"; // Ajuste para sua porta/api
+
+  const authHeaders = {
+    "Authorization": `Bearer ${jwtToken}`
+  };
 
   const formatCurrency = (value) => `R$ ${value.toFixed(2).replace('.', ',')}`;
   const formatDate = (timestamp) => {
@@ -47,7 +52,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Atualiza saldo na tela
   function atualizarSaldo() {
-    fetch(`${API_BASE}/conta/saldo/${cpfLogado}`)
+    fetch(`${API_BASE}/conta/saldo/${cpfLogado}`, {
+      headers: authHeaders
+    })
       .then(r => r.json())
       .then(data => saldoElement.textContent = formatCurrency(data.saldo))
       .catch(() => saldoElement.textContent = formatCurrency(0));
@@ -55,7 +62,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Atualiza extrato na tela
   function atualizarExtrato() {
-    fetch(`${API_BASE}/conta/extrato/${cpfLogado}`)
+    fetch(`${API_BASE}/conta/extrato/${cpfLogado}`, {
+      headers: authHeaders
+    })
       .then(r => r.json())
       .then(displayExtrato)
       .catch(() => displayExtrato([]));
@@ -104,6 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Logout
   logoutBtn.addEventListener("click", () => {
     localStorage.removeItem("usuarioLogado");
+    localStorage.removeItem("jwtToken");
     window.location.href = "index.html";
   });
 
@@ -119,7 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     fetch(`${API_BASE}/conta/deposito`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { ...authHeaders, "Content-Type": "application/json" },
       body: JSON.stringify({ cpf: cpfLogado, valor: amount })
     })
       .then(r => {
@@ -157,7 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     fetch(`${API_BASE}/conta/transferencia`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { ...authHeaders, "Content-Type": "application/json" },
       body: JSON.stringify({ cpfOrigem: cpfLogado, cpfDestino: destCpf, valor: amount })
     })
       .then(r => {

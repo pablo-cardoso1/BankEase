@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BankEase.Api.Migrations
 {
     [DbContext(typeof(BankEaseDbContext))]
-    [Migration("20250426002914_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20250518180716_Inicial")]
+    partial class Inicial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

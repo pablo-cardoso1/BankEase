@@ -14,8 +14,9 @@ document.getElementById("login-form").addEventListener("submit", function (e) {
         if (!r.ok) throw new Error("Login inválido");
         return r.json();
     })
-    .then(() => {
+    .then((data) => {
         localStorage.setItem("usuarioLogado", cpf);
+        localStorage.setItem("jwtToken", data.token);
         window.location.href = "dashboard.html";
     })
     .catch(() => {
