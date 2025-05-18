@@ -1,7 +1,29 @@
+/* ===================
+   Paleta de Cores - BankEase
+   =================== */
+:root {
+  /* Cor principal (confiança, autoridade, fintech) */
+  --ultramarine: #07108A;
+  /* Destaques e botões de ação */
+  --royal-blue: #2563EB;
+  /* Ações secundárias, toque humano, onboarding leve */
+  --manhattan: #F5B78B;
+  /* Fundo leve com contraste suave */
+  --gallery: #EFEFEF;
+  /* Texto escuro, elementos fixos (rodapé, header escuro) */
+  --cod-black: #1C1C1C;
+  /* Neutros (escala de cinza) */
+  --gray-100: #F5F5F5;
+  --gray-200: #EFEFEF;
+  --gray-300: #CCCCCC;
+  --gray-400: #888888;
+  --gray-500: #444444;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f2f4f8;
+    background-color: var(--gallery);
   }
   
   header {
@@ -14,7 +36,7 @@ body {
   }
   
   #logout-btn {
-    background-color: #fff;
+    background-color: var(--gallery); /* Fundo leve com contraste suave */
     color: #4CAF50;
     border: none;
     padding: 10px 20px;
@@ -136,7 +158,7 @@ body {
 }
 
 #lista-extrato li {
-  background-color: #f9f9f9;
+  background-color: var(--gallery); /* Fundo leve com contraste suave */
   padding: 15px;
   border-bottom: 1px solid #eee;
   display: flex;

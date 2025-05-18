@@ -32,7 +32,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', 'Roboto', 'DM Sans', Arial, sans-serif; /* Fonte sans-serif */
+  font-family: 'Inter', 'Roboto', 'DM Sans', Arial, sans-serif;
   font-weight: 400;
   background-color: var(--gallery); /* Fundo leve com contraste suave */
   color: #333;
@@ -81,7 +81,7 @@ nav ul li a:hover {
   color: white;
   text-align: center;
   padding: 100px 20px; /* Mais padding vertical */
-  border-bottom: 3px solid var(--ultramarine); /* Cor principal (confiança, autoridade, fintech) */
+  border-bottom: 3px solid #070e8a;
 }
 
 .hero h2 {
@@ -99,23 +99,19 @@ nav ul li a:hover {
 }
 
 .hero .btn {
-  background-color: var(--ultramarine); /* Cor principal (confiança, autoridade, fintech) */
-  color: white;
+  background-color: royalblue;
+  color: #07108A;
   padding: 15px 40px;
   text-decoration: none;
   font-weight: 600;
   border-radius: 25px;
   margin: 10px;
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease; /* Adiciona transição de transform */
-  display: inline-flex;
-  align-items: center;
-  font-size: 1.2em;
-  vertical-align: middle;
-  color: inherit; /* Estilo flat, cor herdada */
+  display: inline-block; /* Garante que margin funcione corretamente */
 }
 
 .hero .btn:hover {
-  background-color: var(--royal-blue); /* Destaques e botões de ação */
+  background-color: rgba(7, 64, 138, 0.88);
   color: white;
   transform: translateY(-3px); /* Efeito sutil ao passar o mouse */
 }
@@ -183,18 +179,17 @@ section h2 {
 
 /* Estilos para as seções de formulário */
 #cadastro, #login {
-  background-color: var(--gallery); /* Fundo leve com contraste suave */ /* Mantém o fundo padrão do body */
+  background-color: #f8f9fa; /* Mantém o fundo padrão do body */
 }
 
 section form {
   width: 100%;
   max-width: 450px; /* Um pouco maior */
   margin: 40px auto;
-  background-color: var(--gallery); /* Fundo leve com contraste suave */
-  border: 1px solid var(--gray-200);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para destaque */
+  background-color: #ffffff;
   padding: 40px; /* Mais padding interno */
   border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   text-align: left; /* Alinha conteúdo do form à esquerda */
 }
 
@@ -232,7 +227,7 @@ section form .input-container span.material-icons { /* Seleciona especificamente
   top: 50%;
   left: 18px; /* Ajusta posição do ícone */
   transform: translateY(-50%);
-  color: var(--manhattan); /* Ações secundárias, toque humano, onboarding leve */
+  color: #4CAF50;
   font-size: 1.4rem; /* Tamanho do ícone */
 }
 
@@ -258,7 +253,7 @@ footer {
   text-align: center;
   padding: 30px 20px; /* Mais padding */
   background-color: #333;
-  color: var(--cod-black); /* Texto escuro, elementos fixos (rodapé, header escuro) */ /* Cor mais suave */
+  color: #aaa; /* Cor mais suave */
   font-size: 0.9rem; /* Menor */
   margin-top: 60px; /* Espaço antes do rodapé */
 }
